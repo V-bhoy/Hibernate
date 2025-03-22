@@ -4,13 +4,25 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
+
+<!--        database properties-->
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="connection.url">jdbc:mysql://localhost:3306/test</property>
         <property name="connection.username">root</property>
         <property name="connection.password">root</property>
+
+<!--        hibernate properties-->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
         <property name="hibernate.hbm2ddl.auto">create</property>
         <property name="hibernate.show_sql">true</property>
-        <mapping resource="Employee.hbm.xml"/>
+
+<!--        mappings-->
+
+<!--        The resource attribute is used when mapping xml file for entity class -->
+<!--        <mapping resource="Employee.hbm.xml"/>-->
+
+<!--        The class attribute is used when using java annotations in POJO class for mapping-->
+        <mapping class="com.entity.Employee"/>
+        
     </session-factory>
 </hibernate-configuration>

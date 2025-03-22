@@ -1,16 +1,34 @@
 package com.entity;
 
+import javax.persistence.*;
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "employees")
 public class Employee {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer employeeId;
+
+    @Column(name = "employee_name", nullable = false)
     private String employeeName;
+
+    @Column(name = "employee_address", nullable = false)
     private String employeeAddress;
+
+    @Column(name = "employee_contact", nullable = false, unique = true, length = 10)
     private String employeePhone;
+
+    @Column(name = "employee_email", nullable = false, unique = true)
     private String employeeEmail;
+
+    @Column(name = "employee_salary", nullable = false)
     private Integer employeeSalary;
+
+    @Column(name = "created_at", nullable = false)
     private Timestamp createdDate;
+
+    @Column(name = "updated_at", nullable = false)
     private Timestamp modifiedDate;
 
     @Override
