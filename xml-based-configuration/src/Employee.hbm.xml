@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.entity.Employee" table="employees">
+        <id name="employeeId" type="java.lang.Integer" column="employee_id">
+            <generator class="identity"/>
+        </id>
+        <property name="employeeName" type="java.lang.String" column="employee_name"/>
+        <property name="employeeAddress" type="java.lang.String" column="employee_address"/>
+        <property name="employeePhone" type="java.lang.String" column="employee_contact" length="10"/>
+        <property name="employeeEmail" type="java.lang.String" column="employee_email"/>
+        <property name="employeeSalary" type="java.lang.Integer" column="employee_salary"/>
+        <property name="createdDate" type="timestamp" column="created_at"/>
+        <property name="modifiedDate" type="timestamp" column="updated_at"/>
+    </class>
+</hibernate-mapping>
