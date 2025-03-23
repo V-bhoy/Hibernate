@@ -20,7 +20,7 @@ public class HomeController {
         // .addAnnotatedClass(Employee.class);
         // Use the above method for mapping entity using java annotations if no mapping tag is
         // mentioned in the hibernate config xml file
-        
+
         SessionFactory sessionFactory = configuration.buildSessionFactory();
         Session session = sessionFactory.openSession();
 
