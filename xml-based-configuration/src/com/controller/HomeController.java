@@ -15,6 +15,12 @@ public class HomeController {
 
     public static void main(String[] args) {
         Configuration configuration = new org.hibernate.cfg.Configuration().configure("hibernate.cfg.xml");
+
+        // Configuration configuration = new org.hibernate.cfg.Configuration().configure("hibernate.cfg.xml")\
+        // .addAnnotatedClass(Employee.class);
+        // Use the above method for mapping entity using java annotations if no mapping tag is
+        // mentioned in the hibernate config xml file
+        
         SessionFactory sessionFactory = configuration.buildSessionFactory();
         Session session = sessionFactory.openSession();
 

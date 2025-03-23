@@ -22,6 +22,7 @@
 <!--        <mapping resource="Employee.hbm.xml"/>-->
 
 <!--        The class attribute is used when using java annotations in POJO class for mapping-->
+<!--        Alternatively, you can also remove this mapping tag and add .addAnnotatedClass() for mapping entity-->
         <mapping class="com.entity.Employee"/>
 
     </session-factory>
