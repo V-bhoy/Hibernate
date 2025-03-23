@@ -23,6 +23,6 @@
 
 <!--        The class attribute is used when using java annotations in POJO class for mapping-->
         <mapping class="com.entity.Employee"/>
-        
+
     </session-factory>
 </hibernate-configuration>
