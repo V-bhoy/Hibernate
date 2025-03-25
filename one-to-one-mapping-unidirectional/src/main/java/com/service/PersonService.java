@@ -1,4 +1,4 @@
-package com.com.service;
+package com.service;
 
 import com.entity.Person;
 
