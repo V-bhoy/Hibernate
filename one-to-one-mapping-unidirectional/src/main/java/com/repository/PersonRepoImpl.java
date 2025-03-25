@@ -1,4 +1,4 @@
-package com.com.repository;
+package com.repository;
 
 import com.entity.AdhaarCard;
 import com.entity.Person;
