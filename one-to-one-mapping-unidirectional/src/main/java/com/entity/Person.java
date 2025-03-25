@@ -1,11 +1,24 @@
 package com.entity;
 
+import com.enums.Gender;
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "person")
 public class Person {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(nullable = false)
     private String name;
+    @Column(nullable = false)
     private int age;
-    private String gender;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Gender gender;
+    @Column(nullable = false)
     private String address;
+    @Column(length = 10, unique = true)
     private String phone;
 
     @Override
@@ -24,10 +37,6 @@ public class Person {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
     }
@@ -44,11 +53,11 @@ public class Person {
         this.age = age;
     }
 
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 

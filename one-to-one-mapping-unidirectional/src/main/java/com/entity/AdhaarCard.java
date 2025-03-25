@@ -1,7 +1,14 @@
 package com.entity;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "adhaar")
 public class AdhaarCard {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(name = "aadhar_no", nullable = false, unique = true, length = 12)
     private String adhaarNo;
 
     @Override
@@ -14,10 +21,6 @@ public class AdhaarCard {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getAdhaarNo() {
