@@ -20,7 +20,7 @@ public class HibernateUtil {
         if(sessionFactory == null){
             try{
                 registry = new StandardServiceRegistryBuilder().build();
-                MetadataSources mds = new MetadataSources(registry).addAnnotatedClass(Person.class).addAnnotatedClass(AdhaarCard.class);
+                MetadataSources mds = new MetadataSources(registry).addAnnotatedClass(AdhaarCard.class).addAnnotatedClass(Person.class);
                 Metadata md = mds.getMetadataBuilder().build();
                 sessionFactory = md.getSessionFactoryBuilder().build();
             }catch(Exception e){

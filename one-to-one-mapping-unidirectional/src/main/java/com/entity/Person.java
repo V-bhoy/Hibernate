@@ -20,6 +20,9 @@ public class Person {
     private String address;
     @Column(length = 10, unique = true)
     private String phone;
+    @OneToOne(cascade = CascadeType.ALL, optional = false, orphanRemoval = true)
+    @JoinColumn(name = "adhaar_id", referencedColumnName = "id", unique = true, nullable = false)
+    private AdhaarCard adhaarCard;
 
     @Override
     public String toString() {
@@ -27,9 +30,10 @@ public class Person {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
-                ", gender='" + gender + '\'' +
+                ", gender=" + gender +
                 ", address='" + address + '\'' +
                 ", phone='" + phone + '\'' +
+                ", adhaarCard=" + adhaarCard +
                 '}';
     }
 
@@ -75,5 +79,13 @@ public class Person {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public AdhaarCard getAdhaarCard() {
+        return adhaarCard;
+    }
+
+    public void setAdhaarCard(AdhaarCard adhaarCard) {
+        this.adhaarCard = adhaarCard;
     }
 }
