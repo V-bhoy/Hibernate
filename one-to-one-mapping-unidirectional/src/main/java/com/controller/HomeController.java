@@ -1,8 +1,8 @@
-package com.com.controller;
+package com.controller;
 
-import com.com.repository.PersonRepoImpl;
-import com.com.service.PersonService;
-import com.com.service.PersonServiceImpl;
+import com.repository.PersonRepoImpl;
+import com.service.PersonService;
+import com.service.PersonServiceImpl;
 import com.entity.AdhaarCard;
 import com.entity.Person;
 import com.util.HibernateUtil;

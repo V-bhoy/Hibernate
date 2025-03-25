@@ -1,6 +1,6 @@
-package com.com.service;
+package com.service;
 
-import com.com.repository.PersonRepo;
+import com.repository.PersonRepo;
 import com.entity.Person;
 
 public class PersonServiceImpl implements PersonService {
