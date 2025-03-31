@@ -8,7 +8,10 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class AuthorRepoImpl implements AuthorRepo {
   SessionFactory sf = HibernateUtil.getSessionFactory();
@@ -71,8 +74,11 @@ public class AuthorRepoImpl implements AuthorRepo {
             tx = session.beginTransaction();
             Author existingAuthor = session.get(Author.class, authorId);
             if(existingAuthor != null) {
-                existingAuthor.setBooks(books);
-                session.merge(existingAuthor);
+                List<Book> currBooks = existingAuthor.getBooks();
+                Set<Integer> bookIdsToRemove = books.stream()
+                        .map(Book::getId)
+                        .collect(Collectors.toSet());
+                currBooks.removeIf(book -> bookIdsToRemove.contains(book.getId()));
             }
             tx.commit();
         }catch (Exception e) {
@@ -88,7 +94,9 @@ public class AuthorRepoImpl implements AuthorRepo {
     public Author getAuthor(int authorId) {
         try(Session session = sf.openSession()) {
             Author author = session.get(Author.class, authorId);
-            Hibernate.initialize(author.getBooks());
+            if(author != null) {
+                Hibernate.initialize(author.getBooks());
+            }
             return author;
         }
     }

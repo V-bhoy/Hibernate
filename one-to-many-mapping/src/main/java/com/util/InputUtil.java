@@ -126,23 +126,24 @@ public class InputUtil {
         }
 
     public static List<Book> acceptBookIdsToDelete(Scanner sc, List<Book> books){
-        List<Book> booksToUpdate = new ArrayList<>();
+        List<Book> booksToDelete = new ArrayList<>();
         try{
            for(Book book : books){
+               System.out.println(book);
                System.out.println("Enter y to delete or enter n to skip: ");
                char ch = sc.nextLine().toUpperCase().charAt(0);
-               if(ch == 'N'){
-                   booksToUpdate.add(book);
+               if(ch == 'Y'){
+                   booksToDelete.add(book);
                }
            }
-           if(booksToUpdate.isEmpty()){
+           if(booksToDelete.size() == books.size()){
                System.out.println("Are you sure you want to delete all the books? Enter y to continue or n to exit: ");
                char ch = sc.nextLine().toUpperCase().charAt(0);
                if(ch == 'N'){
-                   return books;
+                   return new ArrayList<>();
                }
            }
-           return booksToUpdate;
+           return booksToDelete;
         }catch (Exception e){
             System.out.println(e.getMessage());
             return acceptBookIdsToDelete(sc, books);

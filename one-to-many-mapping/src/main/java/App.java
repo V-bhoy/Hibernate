@@ -102,11 +102,11 @@ public class App {
                             if (books.isEmpty()) {
                                 System.out.println("\nThere are no books to delete!");
                             } else {
-                                List<Book> updatedBooks = InputUtil.acceptBookIdsToDelete(sc, books);
-                                if (updatedBooks.size() == books.size()) {
+                                List<Book> deleteBooks = InputUtil.acceptBookIdsToDelete(sc, books);
+                                if (deleteBooks.isEmpty()) {
                                     System.out.println("\nThere are no books to delete!");
                                 } else {
-                                    as.removeAuthorBooks(updatedBooks, authorId);
+                                    as.removeAuthorBooks(deleteBooks, authorId);
                                     System.out.println("\nDeleted books successfully!");
                                 }
                             }

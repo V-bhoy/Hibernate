@@ -20,10 +20,10 @@ public class BookRepoImpl implements BookRepo {
             if(author != null){
                 List<Book> bookList = author.getBooks();
                 for(Book book : books){
+                    book.setAuthor(author);
                     bookList.add(book);
                 }
                 author.setBooks(bookList);
-                session.merge(author);
             }
             tx.commit();
         }catch(Exception e) {
