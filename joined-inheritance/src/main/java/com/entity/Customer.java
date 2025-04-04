@@ -38,5 +38,13 @@ public class Customer {
         this.product = product;
     }
 
-
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", product=" + product +
+                '}';
+    }
 }
+
