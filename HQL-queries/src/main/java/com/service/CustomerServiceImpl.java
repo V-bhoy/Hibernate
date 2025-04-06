@@ -29,6 +29,11 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    public Object getCustomerName(int customerId) {
+        return customerRepo.getCustomerName(customerId);
+    }
+
+    @Override
     public Customer getCustomerWithProductDetails(int customerId) {
         return customerRepo.getCustomerWithProductDetails(customerId);
     }

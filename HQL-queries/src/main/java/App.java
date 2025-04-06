@@ -171,6 +171,16 @@ public class App {
                         }
                     }
                     break;
+                    case 14: {
+                        int customerId = InputUtil.acceptCustomerId(sc);
+                        Object c = cs.getCustomerName(customerId);
+                        if(c == null){
+                            System.out.println("Customer not found!");
+                        }else{
+                            System.out.println("name: "+ c);
+                        }
+                    }
+                    break;
                     default:
                         System.out.println("INVALID CHOICE!");
                 }

@@ -9,6 +9,7 @@ public interface CustomerRepo {
     void insertCustomer(Customer customer);
     Customer getCustomer(int customerId);
     Customer getCustomerWithProductDetails(int customerId);
+    Object getCustomerName(int customerId);
     void updateCustomer(Customer customer, int customerId);
     void deleteCustomer(int customerId);
     void updateCustomerProduct(Product product, int customerId);

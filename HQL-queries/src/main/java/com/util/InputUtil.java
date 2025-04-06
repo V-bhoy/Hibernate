@@ -24,6 +24,7 @@ public class InputUtil {
         System.out.println("11. Get customers with price > 1000");
         System.out.println("12. Get count of product type");
         System.out.println("13. Get paginated customers with page number with size of 20");
+        System.out.println("14. Get customer name using customer Id");
         if (sc.hasNextInt()) {
             int option = sc.nextInt();
             sc.nextLine();

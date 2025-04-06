@@ -54,8 +54,16 @@ public class CustomerRepoImpl implements CustomerRepo{
         }
     }
 
+    @Override
+    public Object getCustomerName(int customerId) {
+        try(Session session = sessionFactory.openSession()){
+            String hql = "SELECT c.name FROM Customer c WHERE c.id = :customerId";
+            return session.createQuery(hql, Object.class).setParameter("customerId", customerId).getSingleResultOrNull();
+        }
+    }
 
-  // when updating with hql query, it executes direct sql on the db
+
+    // when updating with hql query, it executes direct sql on the db
   // without loading the entity into the persistence context
   // hibernate won't track changes in the entity, no dirty checking will happen
   // and no cascade updates will occur
