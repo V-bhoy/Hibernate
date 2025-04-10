@@ -12,8 +12,8 @@
 // 4. If you clear the session (session.clear()), the cache is also cleared.
 
 import com.entity.User;
-import com.reposirory.UserRepo;
-import com.reposirory.UserRepoImpl;
+import com.repository.UserRepo;
+import com.repository.UserRepoImpl;
 import com.util.HibernateUtil;
 import com.util.InputUtil;
 

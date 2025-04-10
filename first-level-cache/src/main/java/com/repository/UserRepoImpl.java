@@ -1,4 +1,4 @@
-package com.reposirory;
+package com.repository;
 
 import com.entity.User;
 import com.util.HibernateUtil;
